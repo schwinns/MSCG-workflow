@@ -1,0 +1,32 @@
+# This file was created Thu Aug 12 10:11:17 2021
+# Created by:
+#                      :-) GROMACS - gmx energy, 2020.5 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /Users/nate_schwindt/Projects/mscg/workflow/atomistic/amorphous/equilibration
+# Command line:
+#   gmx energy -f npt7.edr -o box.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Gromacs Runs One Microsecond At Cannonball Speeds
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(nm)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Box-X"
+@ s1 legend "Box-Y"
+@ s2 legend "Box-Z"
+    0.000000    6.687080    6.687080    6.751960
+    2.000000    6.667173    6.667173    6.727362
+    4.000000    6.686444    6.686444    6.715427
+    6.000000    6.678083    6.678083    6.712320
+    8.000000    6.673555    6.673555    6.724128
+   10.000000    6.665455    6.665455    6.734445

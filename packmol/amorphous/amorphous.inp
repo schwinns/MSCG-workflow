@@ -1,0 +1,32 @@
+#
+# A mixture of monomer and glycerol
+#
+
+# All the atoms from diferent molecules will be separated at least 2.0
+# Anstroms at the solution.
+
+tolerance 2.0
+
+# The file type of input and output files is PDB
+
+filetype pdb
+
+# The name of the output file
+
+output amorphous.pdb
+
+# 1000 glycerol molecules and 128 monomer molecules will be put in a box
+# defined by the minimum coordinates x, y and z = 0. 0. 0. and maximum
+# coordinates 70. 70. 70. That is, they will be put in a cube of side
+# 70. (the keyword "inside cube 0. 0. 0. 70.") could be used as well.
+
+structure GLY.pdb 
+  number 1000 
+  inside box 0. 0. 0. 70. 70. 70. 
+end structure
+
+structure Dibrpyr14.pdb
+  number 128
+  inside box 0. 0. 0. 70. 70. 70. 
+end structure
+

@@ -1,0 +1,44 @@
+#
+# Lipid double layer with water over and below
+#
+
+# Every atom from diferent molecules will be far from each other at
+# least 2.0 Anstrons at the solution.
+
+tolerance 1.5
+
+nloop 200
+
+nloop0 2000
+
+# Coordinate file types will be in pdb format (keyword not required for
+# pdb file format, but required for tinker, xyz or moldy).
+
+filetype pdb
+
+# The output pdb file
+
+output top.pdb
+
+# First lipid layer: the polar head is oriented to down to the water
+# molecules.
+# 50 lipids will be put inside a box of side 40. in the x and y
+# directions and 14. in the z direction (14 is a little more than that
+# length of the lipid). The atoms 31 and 32 of the pdb file of this
+# lipid, which belong to the polar head, will be constrained to be
+# below the the plane z = 2., and the atoms 1 and 2, which are the
+# hydrophobic end of the lipid will be constrained to be over the plane
+# z = 12. Therefore, all the lipids will be oriented, with their polar
+# heads pointing to the water box below. 
+ 
+structure ./Dibrpyr14.pdb 
+  number 64
+  inside box 0. 0. 0. 60. 60. 25.
+  atoms 66 69
+    above plane 0. 0. 1. 23.3
+  end atoms
+  atoms 1 134
+    below plane 0. 0. 1. 2.
+  end atoms
+end structure 
+

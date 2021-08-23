@@ -1,0 +1,81 @@
+#!/bin/bash
+#SBATCH -N 1 --ntasks-per-node=64
+#SBATCH -t 8:00:00
+#SBATCH -p RM-shared
+#SBATCH -J 'run5'
+#SBATCH -o '%x.out'
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=nasc4134@colorado.edu
+
+module load gcc
+module load cuda/11.1.1
+module load openmpi/3.1.6-gcc8.3.1
+PATH=$PATH:/jet/home/schwinns/pkgs/gromacs/2020.5
+source /jet/home/schwinns/pkgs/gromacs/2020.5/bin/GMXRC
+
+export GMX_MAXBACKUP=-1  # do not make back-ups
+export GMX_MAXCONSTRWARN=-1
+
+# Alternating NVT-NPT equilibration
+
+#NVT equilibration (10 ps)
+#gmx grompp -p topol.top -f nvt.mdp -c min_full.gro -o nvt.tpr
+#gmx mdrun -deffnm nvt
+#Continuation
+#gmx mdrun -cpi nvt.cpt -deffnm nvt
+
+
+#NPT equilibration (10 ps)
+#gmx grompp -p topol.top -f npt.mdp -c nvt.gro -o npt.tpr
+#gmx mdrun -deffnm npt
+
+#NVT equilibration (10 ps)
+#gmx grompp -p topol.top -f nvt.mdp -c npt.gro -o nvt2.tpr
+#gmx mdrun -deffnm nvt2
+
+#NPT equilibration (10 ps)
+#gmx grompp -p topol.top -f npt.mdp -c nvt2.gro -o npt2.tpr
+#gmx mdrun -deffnm npt2
+
+#NVT (10 ps)
+#gmx grompp -p topol.top -f nvt.mdp -c npt2.gro -o nvt3.tpr
+#gmx mdrun -deffnm nvt3
+#Continuation
+#gmx mdrun -cpi nvt3.cpt -deffnm nvt3
+
+#NPT (10 ps)
+#gmx grompp -p topol.top -f npt.mdp -c nvt3.gro -o npt3.tpr
+#gmx mdrun -deffnm npt3
+
+#NVT (10 ps)
+#gmx grompp -p topol.top -f nvt.mdp -c npt3.gro -o nvt4.tpr
+#gmx mdrun -cpi nvt4.cpt -deffnm nvt4
+
+#NPT (10 ps)
+#gmx grompp -p topol.top -f npt.mdp -c nvt4.gro -o npt4.tpr
+#gmx mdrun -deffnm npt4
+
+#NVT equilibration (10 ps)
+#gmx grompp -p topol.top -f nvt.mdp -c npt4.gro -o nvt5.tpr
+#gmx mdrun -deffnm nvt5
+
+#NPT equilibration (10 ps)
+#gmx grompp -p topol.top -f npt.mdp -c nvt5.gro -o npt5.tpr
+#gmx mdrun -deffnm npt5
+
+#NVT (10 ps)
+#gmx grompp -p topol.top -f nvt.mdp -c npt5.gro -o nvt6.tpr
+#gmx mdrun -deffnm nvt6
+
+#NPT (10 ps)
+#gmx grompp -p topol.top -f npt.mdp -c nvt6.gro -o npt6.tpr
+#Continuation
+gmx mdrun -deffnm npt6
+
+#NVT (10 ps)
+gmx grompp -p topol.top -f nvt.mdp -c npt6.gro -o nvt7.tpr
+gmx mdrun -deffnm nvt7
+
+#NPT (10 ps)
+gmx grompp -p topol.top -f npt.mdp -c nvt7.gro -o npt7.tpr
+gmx mdrun -deffnm npt7

@@ -1,0 +1,30 @@
+# This file was created Thu Aug 12 10:13:01 2021
+# Created by:
+#                      :-) GROMACS - gmx energy, 2020.5 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /Users/nate_schwindt/Projects/mscg/workflow/atomistic/amorphous/equilibration
+# Command line:
+#   gmx energy -f npt.edr -o potential1.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Getting the Right Output Means no Artefacts in Calculating Stuff
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  15158.388672
+    2.000000  7877.138184
+    4.000000  6477.330566
+    6.000000  4763.874023
+    8.000000  3277.889893
+   10.000000  2769.705078
