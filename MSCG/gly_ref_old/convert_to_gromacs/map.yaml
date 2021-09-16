@@ -1,0 +1,22 @@
+site-types:
+  C:
+    index:    [   1,    0,   6,   7,   8]
+    x-weight: [12.0, 16.0, 1.0, 1.0, 1.0]
+    f-weight: [ 1.0,  1.0, 1.0, 1.0, 1.0]
+  C1:
+    index:    [   2,    5,  13,   9]
+    x-weight: [12.0, 16.0, 1.0, 1.0]
+    f-weight: [ 1.0,  1.0, 1.0, 1.0]
+  C2:
+    index:    [   3,    4,  12,  10,  11]
+    x-weight: [12.0, 16.0, 1.0, 1.0, 1.0]
+    f-weight: [ 1.0,  1.0, 1.0, 1.0, 1.0]
+system:
+  - anchor: 0
+    repeat: 1000
+    offset: 14
+    groups:
+      - sites:
+        - [ C, 0]
+        - [C1, 0]
+        - [C2, 0]

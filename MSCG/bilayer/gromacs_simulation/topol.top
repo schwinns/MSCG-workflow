@@ -1,0 +1,48 @@
+; Template for converting cg.top to topol.top
+; Examples are for glycerol bead
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               1               yes             0.5     0.8333
+
+[ atomtypes ]
+; name   bond_type   mass     charge   ptype     C       A
+C       C           31.04       0       A       1.0e00  0.0e00
+C1      C1          30.03       0       A       1.0e00  0.0e00
+C2      C2          31.04       0       A       1.0e00  0.0e00
+
+[ nonbond_params ]
+; i     j   func    C       A
+C       C1  1       1.0e00  0.0e00
+C       C2  1       1.0e00  0.0e00
+C1      C2  1       1.0e00  0.0e00
+
+; GLY_martini.itp vv
+
+[ moleculetype ]
+; molname    nrexcl
+  GLY         1 
+
+[ atoms ]
+; nr type resnr residue atom cgnr charge mass
+   1  C    0    GLY   C    1     0     31
+   2  C1   0    GLY   C1    2    0     30   
+   3  C2   0    GLY   C2    3    0     31   
+
+
+[bonds]
+; i  j  funct length
+  1  2   1     0.2341   25000 ; cog
+  2  3   1     0.2341   25000 ; cog
+
+
+[angles]
+; i  j k   funct angle force.C
+  1  2 3    2    93.41 100
+
+[ system ]
+Glycerol Example
+
+[ molecules ]
+; Compounds     nmols
+GLY             1000

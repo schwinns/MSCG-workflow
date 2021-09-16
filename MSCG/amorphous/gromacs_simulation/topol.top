@@ -1,0 +1,28 @@
+; Template for converting cg.top to topol.top
+; Examples are for glycerol bead
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               1               yes             0.5     0.8333
+
+[ atomtypes ]
+; name   bond_type   mass     charge   ptype     C       A
+C       C           31.04       0       A       1.0e00  0.0e00
+C1      C1          30.03       0       A       1.0e00  0.0e00
+C2      C2          31.04       0       A       1.0e00  0.0e00
+
+[ nonbond_params ]
+; i     j   func    C       A
+C       C1  1       1.0e00  0.0e00
+C       C2  1       1.0e00  0.0e00
+C1      C2  1       1.0e00  0.0e00
+
+; Include Martini bonded parameters since Gromacs cannot use bonded tables
+#include "GLY_TP6.itp" 
+
+[ system ]
+Glycerol Example
+
+[ molecules ]
+; Compounds     nmols
+GLY             1000

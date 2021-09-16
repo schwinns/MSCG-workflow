@@ -1,0 +1,16 @@
+cgsites 3000
+cgtypes 3
+C
+C1
+C2
+moltypes 1
+mol 3 2
+sitetypes
+C
+C1
+C2
+bonds 2
+1 2
+2 3
+system 1
+1 1000

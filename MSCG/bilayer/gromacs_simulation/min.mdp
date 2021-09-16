@@ -1,0 +1,19 @@
+integrator               = steep
+emstep                   = 0.001
+nsteps                   = -1
+
+nstxout = 0
+nstvout = 0
+nstfout = 0
+compressed-x-grps = System
+
+cutoff-scheme            = group
+pbc                      = xyz
+
+coulombtype              = user
+vdw_type                 = user
+energygrps = C C1 C2
+energygrp_table = C C C C2 C1 C1 C1 C2 C2 C2
+
+; GENERATE VELOCITIES FOR STARTUP RUN:
+gen_vel                  = no

@@ -1,0 +1,20 @@
+;Forcefield
+#include "/jet/home/schwinns/LLC_Membranes/LLC_Membranes/setup/../top/Forcefields/gaff/gaff.itp"
+
+;MOL Topology
+#include "../reordered.itp"
+
+;Ion Topology
+#include "/jet/home/schwinns/LLC_Membranes/LLC_Membranes/setup/../top/topologies/ions.itp"
+
+;GLY Topology
+#include "../reordered_GLY.itp"
+
+[ system ]
+Simulation Box
+
+[ molecules ]
+;Compounds     nmols
+MOL              128
+BR               256
+GLY             1000

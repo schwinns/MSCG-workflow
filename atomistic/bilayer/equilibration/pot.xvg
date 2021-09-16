@@ -1,0 +1,30 @@
+# This file was created Wed Aug 18 08:48:27 2021
+# Created by:
+#                      :-) GROMACS - gmx energy, 2020.5 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /Users/nate_schwindt/Projects/mscg/workflow/atomistic/bilayer/equilibration
+# Command line:
+#   gmx energy -f npt.edr -o pot.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Great Red Oystrich Makes All Chemists Sane
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  18607.013672
+    2.000000  14286.010742
+    4.000000  14085.522461
+    6.000000  11020.316406
+    8.000000  11841.015625
+   10.000000  10263.353516

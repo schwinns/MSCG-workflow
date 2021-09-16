@@ -1,0 +1,68 @@
+cgsites 5432
+cgtypes 11
+TC5
+C1s
+C1
+SC3
+SP2q
+TC5s
+TP2q
+C4
+TP6
+TP6s
+SQ4
+moltypes 3
+mol 17 2
+sitetypes
+TC5
+C1s
+C1
+C1
+SC3
+SP2q
+TC5s
+TP2q
+C4
+TP2q
+TC5s
+SP2q
+SC3
+C1
+C1
+C1s
+TC5
+bonds 18
+1 2
+2 3
+3 4
+4 5
+5 6
+6 7
+7 8
+6 8
+8 9
+9 10
+10 11
+10 12
+11 12
+12 13
+13 14
+14 15
+15 16
+16 17
+mol 3 2
+sitetypes
+TP6
+TP6s
+TP6
+bonds 2
+1 2
+2 3
+mol 1 1
+sitetypes
+SQ4
+bonds 0
+system 3
+1 128
+2 1000
+3 256

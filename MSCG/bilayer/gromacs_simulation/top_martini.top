@@ -1,0 +1,13 @@
+#include "mod_gly.itp"
+#include "martini_v3.0.0_Br.itp"
+#include "itw_3.itp"
+#include "GLY_TP6.itp"
+[ system ]
+; name
+1x1x1 self-assemble
+
+[ molecules ]
+; name        number
+ITW 	       128
+BR            256
+GLY           1000
